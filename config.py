@@ -2,7 +2,8 @@ import os
 
 
 class Config:
-    pass
+    SQLALCHEMY_DATABASE_URI = os.environ.get('postgresql+psycopg2://levy:newpassword@localhost/pitch')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
 class ProdConfig(Config):

@@ -1,5 +1,9 @@
-{% extends 'boootstrap/base.html'%}
+{% extends 'bootstrap/base.html' %}
 
-{%block styles%}
-<link rel="stylesheet" href="">
+{% block styles %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/lumen/bootstrap.min.css">
+{% endblock %}
+
+{% block navbar %}
+    {% include 'navbar.html' %}
 {% endblock %}

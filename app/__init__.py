@@ -7,7 +7,7 @@ bootstrap = Bootstrap()
 db = SQLAlchemy()
 
 
-def create_app(config_state):
+def create_app():
     app = Flask(__name__)
 
 

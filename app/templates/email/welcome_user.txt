@@ -1,3 +1,3 @@
-Hello {{user.username}}
+T'sup {{user.username}}
 Welcome to Pitches Be Crazy!
-We have just seen you have signed up for our application and want to welcome you to the family. Please enjoy the pitches from all your favourite people and also share your ideas to the world.
+We have seen you have just signed up to our application and  we want to welcome you to the family. Please enjoy the pitches from all your favourite people and also share your ideas to the world.

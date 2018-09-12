@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
-
+{% import 'bootstrap/wtf.html' as wtf %}
 {% import 'macros.html' as macro %}
+{% block content %}
+{{wtf.quick_form(PitchForm) }}
+{% endblock %}
 <!--<body>-->
 <!--<button><a href="">BUSINESS</a></button>-->
 <!--<button><a href="">SPORTS</a></button>-->

@@ -106,4 +106,3 @@ venv.bak/
 virtual/
 *.pyc
 start.sh
-requirements.txt

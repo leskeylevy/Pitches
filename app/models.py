@@ -1,7 +1,7 @@
 from . import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-
+from datetime import datetime
 from . import login_manager
 
 
@@ -53,6 +53,12 @@ class Pitch(db.Model):
     def get_pitch(cls, category):
         pitch = Pitch.query.filter_by(category=category).all()
         return pitch
+
+    @classmethod
+    def get_pitch_order(cls):
+        pitch = Pitch.query.order_by('id').all()
+        return pitch
+
 
     def __repr__(self):
         return f'Pitch {self.title}'

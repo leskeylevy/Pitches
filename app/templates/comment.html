@@ -1,6 +1,8 @@
-{% for pitch in personal %}
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
-{{pitch.category}}
+{%  block content %}
+{{ pitch.content }}
+{{ wtf.quick_form(comment_form) }}
 
-
-{% endfor %}
+{% endblock %}

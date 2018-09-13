@@ -8,6 +8,11 @@ class PitchForm(FlaskForm):
     content = TextAreaField('Pitch')
     submit = SubmitField('Submit')
 
+class Test(FlaskForm):
+    comment = StringField('Title', validators=[Required()])
+    # content = TextAreaField('Pitch')
+    submit = SubmitField('Submit')
+
 
 class CommentForm(FlaskForm):
     comment = StringField('Title', validators=[Required])

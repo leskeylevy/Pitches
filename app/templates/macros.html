@@ -3,7 +3,7 @@
     {% for pitch in pitch_list %}
         <h1>{{pitch.title}}</h1>
         <li>{{pitch.content}}</li>
-        <button><a href="">Comment</a></button>
+        <button><a href="{{url_for('main.comment',id=pitch.id)}}">Comment</a></button>
         <button>Upvotes</button>
         <button>Downvotes</button>
     {% endfor %}

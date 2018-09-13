@@ -1,8 +1,8 @@
 from . import main
 from flask import render_template, url_for, redirect
 from flask_login import login_required, current_user
-from .forms import PitchForm, CommentForm
-from ..models import Pitch
+from .forms import PitchForm, CommentForm, Test
+from ..models import Pitch, Comment
 
 
 @main.route('/', methods=['GET', 'POST'])
@@ -66,13 +66,19 @@ def new_pitch(category):
 @login_required
 def comment(id):
     comment_form = CommentForm()
-    # pitch = Pitch.query.get(id)
-    if comment_form.validate_on_submit():
-        comment_form = comment_form.comment.data
-
-        # updating comments
-        new_comment = Comment(comment=comment, user=current_user, id=id)
-        # saving comments
+    test = Test()
+    pitch = Pitch.query.filter_by(id=id).first()
+    print(pitch.content)
+    form = PitchForm()
+    if test.validate_on_submit():
+        # print(pitch)
+        comment = comment_form.comment.data
+    #     print(comment)
+    #
+    #     # updating comments
+        new_comment = Comment (comment=comment, user=current_user)
+    #     # saving comments
         new_comment.save_comment()
         return redirect(url_for('main.index'))
-    return render_template('comment.html', comment_form=comment_form, pitch=pitch)
+
+    return render_template('comment.html', comment_form=test, pitch=pitch)

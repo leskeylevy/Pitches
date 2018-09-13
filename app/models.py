@@ -83,7 +83,7 @@ class Comment(db.Model):
 
     @classmethod
     def get_comments_order(cls):
-        comments = Comment.query.order_by('id').all
+        comments = Comment.query.order_by('id').all()
         return comments
 
     def __repr__(self):

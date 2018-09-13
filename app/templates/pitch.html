@@ -1,6 +1,8 @@
-<div class="container">
-    <form method="post" action="">
-        <textarea class="form-control" placeholder="What's on your mind" cols="30" rows="10"></textarea>
-        <button>POST</button>
-    </form>
-</div>
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% import 'macros.html' as macro %}
+{% block content %}
+    {{wtf.quick_form(PitchForm) }}
+    {{ macro.displayPitchList(pitch) }}
+
+{% endblock %}

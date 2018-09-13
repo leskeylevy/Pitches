@@ -7,6 +7,11 @@ from ..models import Pitch, Comment
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
+    return render_template('index.html')
+
+
+@main.route('/pitch', methods=['GET', 'POST'])
+def pitch():
     form = PitchForm()
     if form.validate_on_submit():
         title = form.title.data
@@ -19,7 +24,7 @@ def index():
 
     pitch = Pitch.get_pitch_order()
 
-    return render_template('index.html', PitchForm=form, pitch=pitch)
+    return render_template('pitch.html', PitchForm=form, pitch=pitch)
 
 
 @main.route('/user/<uname>/update', methods=['GET', 'POST'])
@@ -73,12 +78,12 @@ def comment(id):
     if test.validate_on_submit():
         # print(pitch)
         comment = comment_form.comment.data
-    #     print(comment)
-    #
-    #     # updating comments
-        new_comment = Comment (comment=comment, user=current_user)
-    #     # saving comments
+        #     print(comment)
+        #
+        #     # updating comments
+        new_comment = Comment(comment=comment, user=current_user)
+        #     # saving comments
         new_comment.save_comment()
-        return redirect(url_for('main.comment',id=pitch.id))
+        return redirect(url_for('main.comment', id=pitch.id))
     all_comments = Comment.query.filter_by().all()
     return render_template('comment.html', comment_form=test, pitch=pitch, comments=all_comments)

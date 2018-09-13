@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% import 'bootstrap/wtf.html' as wtf %}
+{% import 'macros.html' as macro %}
 
 {%  block content %}
-{{ pitch.content }}
-{{ wtf.quick_form(comment_form) }}
+    <h1>{{ pitch.content }}</h1>
+    {{ wtf.quick_form(comment_form) }}
+    {{ macro.displayCommentList(comments) }}
 
 {% endblock %}

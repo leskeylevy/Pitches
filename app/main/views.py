@@ -52,7 +52,7 @@ def new_pitch(category):
         content = form.content.data
 
         # UPdated pitch instance
-        new_pitch = Pitch(category=pitch.category, title=pitch.title, content=pitch.content, user=current_user)
+        new_pitch = Pitch(category=category, title=title, content=content, user=current_user)
 
         # save pitch method
         new_pitch.save_pitch()
@@ -68,7 +68,7 @@ def comment(id):
     comment_form = CommentForm()
     test = Test()
     pitch = Pitch.query.filter_by(id=id).first()
-    print(pitch.content)
+    # print(pitch.content)
     form = PitchForm()
     if test.validate_on_submit():
         # print(pitch)
@@ -79,6 +79,6 @@ def comment(id):
         new_comment = Comment (comment=comment, user=current_user)
     #     # saving comments
         new_comment.save_comment()
-        return redirect(url_for('main.index'))
-
-    return render_template('comment.html', comment_form=test, pitch=pitch)
+        return redirect(url_for('main.comment',id=pitch.id))
+    all_comments = Comment.query.filter_by().all()
+    return render_template('comment.html', comment_form=test, pitch=pitch, comments=all_comments)

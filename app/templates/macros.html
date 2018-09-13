@@ -12,7 +12,9 @@
 
 {% macro displayCommentList(comment_list) %}
     {% for comment in comment_list %}
-        <li>{{comment.comment}}</li>
+    <p>{{comment.comment}}</p>
+    <button>LIKE</button>
+    <button>Boo! you suck!</button>
     {% endfor %}
 
 {% endmacro %}

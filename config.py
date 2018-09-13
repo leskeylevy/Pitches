@@ -1,5 +1,6 @@
 import os
 
+
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
     MAIL_SERVER = 'smtp.gmail.com'
@@ -8,12 +9,13 @@ class Config:
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
 
+
 class ProdConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get("HEROKU_POSTGRESQL_ONYX_URL")
 
 
 class DevConfig(Config):
-    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://levy:newpassword@localhost/pitch'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://levy:newpassword@localhost/pitch'
     DEBUG = True
 
 

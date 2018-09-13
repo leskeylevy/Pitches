@@ -9,3 +9,10 @@
     {% endfor %}
 
 {% endmacro %}
+
+{% macro displayCommentList(comment_list) %}
+    {% for comment in comment_list %}
+        <li>{{comment.comment}}</li>
+    {% endfor %}
+
+{% endmacro %}

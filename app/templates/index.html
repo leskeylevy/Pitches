@@ -1,2 +1,18 @@
 {% extends 'base.html' %}
-
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />-->
+    <!--<script src="main.js"></script>-->
+</head>
+<body style="background-image: url({{ url_for('static', filename='images/ales-nesetril-734016-unsplash.jpg') }});background-repeat: no-repeat; background-size: cover">
+  <h1 style="text-align: center; font-size: 150px; color: cyan; padding-top: 10%">PITCH ME</h1>
+ <h4 style="color: blue; text-align: center; font-size: 60px">Impress the world!</h4>
+</body>
+</html>
+{% endblock %}

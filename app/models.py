@@ -45,6 +45,8 @@ class Pitch(db.Model):
     content = db.Column(db.String)
     posted = db.Column(db.DateTime, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    bio = db.Column(db.String(255))
+    profile_pic_path = db.Column(db.String())
 
     def save_pitch(self):
         db.session.add(self)
